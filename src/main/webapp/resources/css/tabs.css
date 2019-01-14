@@ -1,0 +1,283 @@
+/* Базовый контейнер табов */
+.tabtabs {
+    min-width: 320px;
+    padding: 0px;
+    margin: 0 auto;
+}
+/* Стили секций с содержанием */
+.tabtabs>section {
+    display: none;
+    padding: 15px;
+    background: #fff;
+    border: 1px solid #ddd;
+}
+.tabtabs>section>p {
+    margin: 0 0 5px;
+    line-height: 1.5;
+    color: #383838;
+    /* прикрутим анимацию */
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+/* Описываем анимацию свойства opacity */
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* Прячем чекбоксы */
+.tabtabs>input {
+    display: none;
+    position: absolute;
+}
+/* Стили переключателей вкладок (табов) */
+.tabtabs>label {
+    display: inline-block;
+    margin: 0 0 -1px;
+    padding: 15px 25px;
+    font-weight: 600;
+    text-align: center;
+    color: #aaa;
+    border: 0px solid #ddd;
+    border-width: 1px 1px 1px 1px;
+    background: #f1f1f1;
+    border-radius: 3px 3px 0 0;
+}
+/* Шрифт-иконки от Font Awesome в формате Unicode */
+.tabtabs>label:before {
+    font-family: fontawesome;
+    font-weight: normal;
+    margin-right: 10px;
+}
+.tabtabs>label[for*="1"]:before {
+    content: "\f19a";
+}
+.tabtabs>label[for*="2"]:before {
+    content: "\f17a";
+}
+.tabtabs>label[for*="3"]:before {
+    content: "\f13b";
+}
+.tabtabs>label[for*="4"]:before {
+    content: "\f13c";
+}
+/* Изменения стиля переключателей вкладок при наведении */
+
+.tabtabs>label:hover {
+    color: #888;
+    cursor: pointer;
+}
+/* Стили для активной вкладки */
+.tabtabs>input:checked+label {
+    color: #555;
+    border-top: 1px solid #009933;
+    border-bottom: 1px solid #fff;
+    background: #fff;
+}
+/* Активация секций с помощью псевдокласса :checked */
+#tabtabs1:checked~#content-tabtabs1, #tabtabs2:checked~#content-tabtabs2, #tabtabs3:checked~#content-tabtabs3, #tabtabs4:checked~#content-tabtabs4 {
+    display: block;
+}
+/* Убираем текст с переключателей
+* и оставляем иконки на малых экранах
+*/
+
+
+table {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    border-collapse: collapse;
+    color: #686461;
+}
+caption {
+    padding: 3px;
+    color: black;
+    background: #8FD4C1;
+    font-size: 18px;
+    text-align: left;
+    font-weight: bold;
+}
+th {
+    border-bottom: 3px solid #B9B29F;
+    padding: 3px;
+    text-align: left;
+}
+td {
+    padding: 3px;
+}
+tr:nth-child(odd) {
+    background: white;
+}
+tr:nth-child(even) {
+    background: #E8E6D1;
+}
+
+#table10 {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+#table10 tbody td:nth-child(1),
+#table10 thead th:nth-child(1) { min-width: 28%; text-align: left }
+
+#table10 tbody td:nth-child(2),
+#table10 thead th:nth-child(2) { width: 8%; text-align: left}
+
+#table10 tbody td:nth-child(3),
+#table10 thead th:nth-child(3) { width: 8%; text-align: left}
+
+#table10 tbody td:nth-child(4),
+#table10 thead th:nth-child(4) { width: 8%; text-align: left}
+#table10 tbody td:nth-child(5),
+#table10 thead th:nth-child(5) { width: 8%; text-align: left}
+#table10 tbody td:nth-child(6),
+#table10 thead th:nth-child(6) { width: 8%; text-align: left}
+#table10 tbody td:nth-child(7),
+#table10 thead th:nth-child(7) { width: 8%; text-align: left}
+#table10 tbody td:nth-child(8),
+#table10 thead th:nth-child(8) { width: 8%; text-align: left}
+#table10 tbody td:nth-child(9),
+#table10 thead th:nth-child(9) { width: 8%; text-align: left}
+#table10 tbody td:nth-child(10),
+#table10 thead th:nth-child(10) { width: 8%; text-align: left}
+
+#table10  thead {
+    background-color: #333;
+    color: #000000;
+}
+
+#table10 thead tr {
+    display: block;
+    position: relative;
+}
+
+#table10 tbody {
+    display: block;
+    overflow: auto;
+    width: 100%;
+    height: 600px;
+}
+
+#table10 tbody tr:nth-child(even) {
+    background-color: #DDD;
+}
+
+#tab8 {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    border-collapse: collapse;
+    color: #686461;
+}
+#tab8 caption {
+    padding: 3px;
+    color: black;
+    background: #8FD4C1;
+    font-size: 18px;
+    text-align: left;
+    font-weight: bold;
+}
+#tab8 th {
+    border-bottom: 3px solid #B9B29F;
+    padding: 3px;
+    text-align: left;
+}
+#tab8 td {
+    padding: 3px;
+}
+#tab8 tr:nth-child(odd) {
+    background: white;
+}
+#tab8 tr:nth-child(even) {
+    background: #E8E6D1;
+}
+
+#tab8 {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+#tab8 tbody td:nth-child(1){ width: 34%; text-align: left }
+
+#tab8 tbody td:nth-child(2){ width: 11%; text-align: left}
+
+#tab8 tbody td:nth-child(3){ width: 11%; text-align: left}
+
+#tab8 tbody td:nth-child(4){ width: 11%; text-align: left}
+#tab8 tbody td:nth-child(5){ width: 11%; text-align: left}
+#tab8 tbody td:nth-child(6) { width: 11%; text-align: left}
+#tab8 tbody td:nth-child(7){ width: 11%; text-align: left}
+
+
+#tab8  thead {
+    background-color: #333;
+    color: #000000;
+}
+
+#tab8 thead tr {
+    display: block;
+    position: relative;
+}
+
+#tab8 tbody {
+    display: block;
+    overflow: auto;
+    width: 100%;
+    height: 600px;
+}
+
+#tab8 tbody tr:nth-child(even) {
+    background-color: #DDD;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    font-size: 12px;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+input[type="number"]:hover,
+input[type="number"]:focus {
+    -moz-appearance: number-input;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+@media screen and (max-width: 680px) {
+    .tabtabs>label {
+        font-size: 0;
+    }
+    .tabtabs>label:before {
+        margin: 0;
+        font-size: 18px;
+    }
+}
+/* Изменяем внутренние отступы
+*  переключателей для малых экранов
+*/
+@media screen and (max-width: 400px) {
+    .tabtabs>label {
+        padding: 15px;
+    }
+}

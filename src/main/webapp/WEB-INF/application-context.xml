@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/mvc
+	   http://www.springframework.org/schema/mvc/spring-mvc.xsd
+	   http://www.springframework.org/schema/context
+	   http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <mvc:resources mapping="/resources/**" location="/resources/" />
+    <!-- themes can be put in different folder such as
+        <mvc:resources mapping="/resources/**" location="/resources/themeBlue" />
+        <mvc:resources mapping="/resources/**" location="/resources/themeGreen" />
+     -->
+
+    <context:property-placeholder location="classpath:util.properties" />
+
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+        <property name="url" value="jdbc:sqlserver://ERMP2:1433;database=IPVHD" />
+        <property name="username" value="ipvhd" />
+        <property name="password" value="peoD777" />
+    </bean>
+
+    <bean id = "UsersJDBCTemplate"
+          class = "ru.tfomsbrk.pvhd.mvc.jdbc.Template.UsersJDBCTemplate">
+        <property name = "dataSource" ref = "dataSource" />
+    </bean>
+
+    <bean id = "EjJDBCTemplate"
+          class="ru.tfomsbrk.pvhd.mvc.jdbc.Template.EjJDBCTemplete">
+        <property name = "dataSource" ref = "dataSource" />
+    </bean>
+
+    <bean id = "MoJDBCTemplate"
+          class="ru.tfomsbrk.pvhd.mvc.jdbc.Template.MoJDBCTemplate">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <bean id = "StatJDBCTemplate"
+          class="ru.tfomsbrk.pvhd.mvc.jdbc.Template.StatJDBCTemplate">
+        <property name="dataSours" ref="dataSource"/>
+    </bean>
+
+    <bean id = "AllReportTemplate"
+          class="ru.tfomsbrk.pvhd.mvc.jdbc.Template.AllReportTemplate">
+        <property name="dataSours" ref="dataSource"/>
+    </bean>
+
+    <bean id = "PrihJDBCTemplate"
+          class="ru.tfomsbrk.pvhd.mvc.jdbc.Template.PrihJDBCTemplate">
+        <property name="dataSours" ref="dataSource"/>
+    </bean>
+
+    <bean id = "NachTemplate"
+          class="ru.tfomsbrk.pvhd.mvc.jdbc.Template.NachTemplate">
+        <property name="dataSours" ref="dataSource"/>
+    </bean>
+
+    <bean id = "IspJDBCTemplate"
+          class="ru.tfomsbrk.pvhd.mvc.jdbc.Template.IspJDBCTemplate">
+        <property name="dataSours" ref="dataSource"/>
+    </bean>
+
+</beans>
